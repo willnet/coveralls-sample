@@ -6,7 +6,7 @@ jobs:
       - image: circleci/ruby:2.6.5-node-browsers
     steps:
       - checkout
-      - run: bundle update --bundler
+      - run: gem i bundler
       - run: bundle install
       - run: yarn install
       - run: COVERALLS_REPO_TOKEN=03URB11QBLDwQI0ftkDSQpyLWx7Wo5vYu bundle exec rails test
