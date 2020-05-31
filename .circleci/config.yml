@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+    steps:
+      - run: bundle exec rake db:schema:load
+      - run: bundle exec rails test
+
